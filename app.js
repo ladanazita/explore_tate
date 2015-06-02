@@ -25,23 +25,19 @@ var app = express()
   var artworkSchema ={
     id:
     {
-      type: Number,
-      select: true
+      type: Number
     },
     artist:
     {
-      type: String,
-      select: true
+      type: String
     },
     title:
     {
-      type: String,
-      select: true
+      type: String
     },
     thumbnailUrl:
     {
-      type: String,
-      select: true
+      type: String
     }
   }
 
