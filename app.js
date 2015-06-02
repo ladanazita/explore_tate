@@ -25,12 +25,20 @@ var Artwork = mongoose.model('Artwork', artworkSchema, 'artworks')
 
 
 
-// static route
+// api route
 app.get('/api/artworks', function (req, res){
   Artwork.findOne(function(err,art){
-    res.send(art);
-  })
-})
+    if (err)
+      res.send(err);
+
+    res.json(art);
+  });
+});
+
+// frontend route
+app.get('*', function(req, res){
+  res.sendfile('index.html');
+});
 
 app.listen(port);
 
