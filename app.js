@@ -54,36 +54,13 @@ app.get('/api/artworks/artists/:id', function (req, res, next){
   });
 });
 
-// var artists = [];
-// // lists all artists
-// for(var i = 0; i< Artwork.length; i ++){
-//   app.get('/api/artworks/artists', function (req,res,next){
-//     res.push(res.artists);
-//   });
-//   return artists;
-// }
-
-// app.forEach(function(err,art){
-//   if (err) return res.send(err);
-//   var artists = [];
-//   app.get(art, function (req, res, next) {
-//     Artwork.find(for i = 0; i<art.length; i ++){
-//     res.json(art[i].artist)
-//   });
-//   });
-// });
-
+// list all the artists
 app.get('/api/artworks/artists', function (req, res, next){
-  Artwork.find({}, {"artist": 1},function (err,art){
+  Artwork.find({}, {"artist": 1}, function (err,art){
     if(err) return res.send(err);
     res.json(art);
-  }).limit(10)
+  }).limit(50);
 });
-//   Artwork.find(function(err, art){
-//     if (err) return res.send(err);
-//     (for (i = 0; i < art.length; i++){
-//       res.json(art[i].artist)}).limit(10)};
-// });
 
 // frontend route
 app.get('*', function(req, res){
