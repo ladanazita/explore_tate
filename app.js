@@ -1,9 +1,19 @@
+// modules
 var express = require('express'),
   mongoose = require('mongoose'),
-  bodyparser = require('body-parser'),
+  bodyParser = require('body-parser'),
   methodOverride = require('method-override');
 
-  mongoose.connect('mongodb://localhost/tate')
+var app = express()
+  // set port
+  var port = process.env.PORT || 3000;
+
+  // connect to mongoDB
+  mongoose.connect('mongodb://localhost/tate');
+
+  //get POST params
+  app.use(bodyParser.json());
+
 
   var artworkSchema ={
     artist: String,
@@ -13,12 +23,15 @@ var express = require('express'),
 
 var Artwork = mongoose.model('Artwork', artworkSchema, 'artworks')
 
-var app = express()
 
-app.get('/', function (req, res){
+
+// static route
+app.get('/api/artworks', function (req, res){
   Artwork.findOne(function(err,art){
     res.send(art);
   })
 })
 
-app.listen(3000);
+app.listen(port);
+
+console.log('Its magical here at ' + port);
