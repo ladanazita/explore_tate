@@ -12,7 +12,7 @@ var express = require('express'),
 var port = process.env.PORT || 3000;
 // connect to mongoDB
 var mongoURI = 'mongodb://localhost:27017/tate';
-var mongoDB = mongoose.connect( mongoURI|| process.env.MONGODB_URI).connection;
+var mongoDB = mongoose.connect( mongoURI|| process.env.MONGOLAB_URI).connection;
 mongoDB.on('error', function(err){
     console.log('Wuh Oh! Connection error', err);
   });
