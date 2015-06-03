@@ -12,7 +12,7 @@ router.get('/api/v1/art/artists/:id', function (req, res, next){
 });
 
 // list all the artists
-router.get('/api/v1/art/artists', function (req, res, next){
+router.get('/api/v1/arts/artists', function (req, res, next){
   art.find({}, {"artist": 1}, function (err,data){
     if(err) return res.send(err);
     res.json(data);
@@ -20,7 +20,7 @@ router.get('/api/v1/art/artists', function (req, res, next){
 });
 
 // create method for testing db
-router.post('/api/v1/art/artists', function (req, res, next){
+router.post('/api/v1/arts/artists', function (req, res, next){
   var newArt = new art({
     title: req.params.title,
     artist: req.params.artist,
