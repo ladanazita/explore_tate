@@ -14,7 +14,7 @@ var port = process.env.PORT || 3000;
 var mongoURI = 'mongodb://localhost:27017/tate';
 var mongoDB = mongoose.connect( mongoURI|| process.env.MONGODB_URI).connection;
 mongoDB.on('error', function(err){
-    console.log('Wuh Oh! Connectin error', err);
+    console.log('Wuh Oh! Connection error', err);
   });
 mongoDB.once('open', function(){
   console.log('Its magical here at ' + port);
