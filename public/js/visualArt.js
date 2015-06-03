@@ -2,7 +2,7 @@ var d3 = require('d3');
 
 var art;
 
-d3.json('/routes/api/v1/artists', function(err, art){
+d3.json('/routes/api/v1/atworks/artists', function(err, art){
   if (err){
     console.log(err);
   }else{
