@@ -10,8 +10,10 @@ var express = require('express'),
   app = express();
 // set port
 var port = process.env.PORT || 3000;
+
 // connect to mongoDB
-var mongoURI = 'mongodb://localhost:27017/tate';
+// var mongoURI = 'mongodb://localhost:27017/tate';
+
 var mongoDB = mongoose.connect( mongoURI|| process.env.MONGOLAB_URI).connection;
 mongoDB.on('error', function(err){
     console.log('Wuh Oh! Connection error', err);
@@ -20,21 +22,21 @@ mongoDB.once('open', function(){
   console.log('Its magical here at ' + port);
 });
 
-function handleCors(req, res, callback) {
+// function handleCors(req, res, callback) {
 
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Authorization');
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE,OPTIONS');
+//     res.setHeader('Access-Control-Allow-Headers', 'Authorization');
 
-    // CORS OPTIONS request, simply return 200
-    if (req.method == 'OPTIONS') {
-        res.statusCode = 200;
-        res.end();
-        callback.onOptions();
-        return;
-    };
-    callback.onContinue();
-  };
+//     // CORS OPTIONS request, simply return 200
+//     if (req.method == 'OPTIONS') {
+//         res.statusCode = 200;
+//         res.end();
+//         callback.onOptions();
+//         return;
+//     };
+//     callback.onContinue();
+//   };
 
 // require routes
 var index = require('./routes/index');

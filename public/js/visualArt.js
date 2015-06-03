@@ -1,6 +1,4 @@
 // var d3 = require('d3');
-// var art = require('../../../models/Artworks');
-
 
 // var art;
 
