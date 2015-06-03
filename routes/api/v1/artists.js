@@ -20,19 +20,25 @@ router.get('/api/v1/artworks/artists', function (req, res, next){
 });
 
 router.post('/api/v1/artworks/artists', function (req, res, next){
-  Artwork.save({
-    artist: req.params.artist,
+  var artwork = new Artwork({
     title: req.params.title,
-    thumbnailUrl: req.param.thumbnailUrl
-  }, function(error){
+    artist: req.params.artist,
+    thumbnailUrl: req.params.thumbnailUrl
+  });
+
+  artwork.save(function(error){
     if(error){
-      return res.json({
+      res.json({
         success: false,
         message: error
       });
     }
+    res.json({
+      success: true,
+      message: 'Posted artwork!'
+    });
+  });
 
-  })
 });
 
 
