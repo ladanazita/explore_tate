@@ -5,8 +5,15 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   cookieParser = require('cookie-parser'),
   path = require('path'),
-  browserify = require('browserify'),
   app = express();
+
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,  Authorization');
+  next();
+});
+
 // set port
 var port = process.env.PORT || 3000;
 
@@ -29,7 +36,6 @@ var artists = require('./routes/api/v1/artists');
   app.use(bodyParser.json());
   app.use('/', index);
   app.use('/', artists);
-
 
   app.use(express.static(__dirname + '/public'));
 

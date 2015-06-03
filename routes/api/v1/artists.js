@@ -20,27 +20,27 @@ router.get('/api/v1/arts/artists', function (req, res, next){
 });
 
 // create method for testing db
-router.post('/api/v1/arts/artists', function (req, res, next){
-  var newArt = new art({
-    title: req.params.title,
-    artist: req.params.artist,
-    thumbnailUrl: req.params.thumbnailUrl
-  });
+// router.post('/api/v1/arts/artists', function (req, res, next){
+//   var newArt = new art({
+//     title: req.params.title,
+//     artist: req.params.artist,
+//     thumbnailUrl: req.params.thumbnailUrl
+//   });
 
-  newArt.save(function(error){
-    if(error){
-      res.json({
-        success: false,
-        message: error
-      });
-    }
-    res.json({
-      success: true,
-      message: 'Posted artwork!'
-    });
-  });
+//   newArt.save(function(error){
+//     if(error){
+//       res.json({
+//         success: false,
+//         message: error
+//       });
+//     }
+//     res.json({
+//       success: true,
+//       message: 'Posted artwork!'
+//     });
+//   });
 
-});
+// });
 
 
 
