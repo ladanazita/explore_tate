@@ -19,7 +19,7 @@ router.get('/api/v1/artworks/artists', function (req, res, next){
   }).limit(10);
 });
 
-router.post('/api/v1/artworks/artists', function(req, res, next){
+router.post('/api/v1/artworks/artists', function (req, res, next){
   Artwork.save({
     artist: req.params.artist,
     title: req.params.title,
