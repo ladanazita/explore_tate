@@ -14,21 +14,21 @@ var port = process.env.PORT || 3000;
 // connect to mongoDB
 mongoose.connect('mongodb://localhost/tate', function(err){
   if(err){
-    console.log('Wuh Oh! Connectin erro', err);
+    console.log('Wuh Oh! Connectin error', err);
   } else{
     console.log('Its magical here at ' + port);
   }
 });
 
 // require routes
-var art = require('routes/api/v1/arts');
-var home = require('routes/index');
+var index = require('./routes/index');
+var artists = require('./routes/api/v1/artists');
 
 
   //get POST params
   app.use(bodyParser.json());
-  app.use('/', home);
-  app.use('/', art);
+  app.use('/', index);
+  app.use('/', artists);
 
 var server = http.createServer(app);
 server.listen(port);
