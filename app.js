@@ -6,6 +6,7 @@ var express = require('express'),
   cookieParser = require('cookie-parser'),
   d3 = require('d3'),
   path = require('path'),
+  browserify = require('browserify'),
   app = express();
 // set port
 var port = process.env.PORT || 3000;
