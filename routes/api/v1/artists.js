@@ -27,7 +27,7 @@ router.post('/api/v1/art/artists', function (req, res, next){
     thumbnailUrl: req.params.thumbnailUrl
   });
 
-  art.save(function(error){
+  newArt.save(function(error){
     if(error){
       res.json({
         success: false,
