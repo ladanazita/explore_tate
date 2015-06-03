@@ -1,6 +1,4 @@
-var art;
-
-d3.json('/api/v1/art/artists', function(err, art){
+d3.json('http://exploretate.herokuapp.com/api/v1/arts/artists', function(err, art){
   if (err){
     console.log(err);
   }else{
