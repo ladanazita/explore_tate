@@ -4,7 +4,7 @@ var router = express.Router();
 
 // frontend route
 router.get('/', function(req, res){
-  res.sendfile('./index.html');
+  res.render('./index.html');
 });
 
 module.exports = router;
