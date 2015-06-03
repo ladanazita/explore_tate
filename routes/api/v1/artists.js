@@ -19,6 +19,22 @@ router.get('/api/v1/artworks/artists', function (req, res, next){
   }).limit(10);
 });
 
+router.post('/api/v1/artworks/artists', function(req, res, next){
+  Artwork.save({
+    artist: req.params.artist,
+    title: req.params.title,
+    thumbnailUrl: req.param.thumbnailUrl
+  }, function(error){
+    if(error){
+      return res.json({
+        success: false,
+        message: error
+      });
+    }
+
+  })
+});
+
 
 
 module.exports = router;
