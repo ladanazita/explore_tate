@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var artworksSchema ={
+var artworkSchema ={
     id:
     {
       type: Number
@@ -19,4 +19,4 @@ var artworksSchema ={
     }
   }
 
-module.exports = mongoose.model('Artworks', artworksSchema);
+module.exports = mongoose.model('Artwork', artworkSchema);
