@@ -16,7 +16,7 @@ router.get('/api/v1/artworks/artists', function (req, res, next){
   Artworks.find({}, {"artist": 1}, function (err,art){
     if(err) return res.send(err);
     res.json(art);
-  }).limit(50);
+  }).limit(10);
 });
 
 

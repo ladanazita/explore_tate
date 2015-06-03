@@ -10,9 +10,9 @@ var express = require('express'),
   app = express();
 // set port
 var port = process.env.PORT || 3000;
-
 // connect to mongoDB
-mongoose.connect('mongodb://localhost/tate', function(err){
+var mongoURI = 'mongodb://localhost/tate';
+mongoose.connect( mongoURI|| process.env.MONGODB_URI, function(err){
   if(err){
     console.log('Wuh Oh! Connectin error', err);
   } else{
