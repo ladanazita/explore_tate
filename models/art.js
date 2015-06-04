@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+// var Schema = mongoose.Schema;
 
-var artSchema ={
+var artSchema = {
     id:
     {
       type: Number
@@ -8,6 +9,10 @@ var artSchema ={
     artist:
     {
       type: String
+    },
+    artistId:
+    {
+      type: Number
     },
     title:
     {
@@ -17,6 +22,17 @@ var artSchema ={
     {
       type: String
     }
-  }
+  };
+
+// var Art = mongoose.model('art', artSchema);
+
+// var query = Art.find({},{artist:1});
+
+// query.exec(function(err,art){
+//   if (err) return res.send(err);
+//   console.log(art.artist)
+// })
+// create a method to alphabetize
+// change the string, take out comma, first name last name
 
 module.exports = mongoose.model('art', artSchema);

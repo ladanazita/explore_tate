@@ -22,16 +22,16 @@ var port = process.env.PORT || 3000;
 
 var mongoDB = mongoose.connect(process.env.MONGOLAB_URI).connection;
 mongoDB.on('error', function(err){
-    console.log('Wuh Oh! Connection error', err);
+    console.log('【・ヘ・?】 Connection error', err);
   });
 mongoDB.once('open', function(){
-  console.log('Its magical here at ' + port);
+  console.log(' ＼（＾▽＾）／ Its magical here at ' + port);
 });
 
-// require routes
+// SPA
 var index = require('./routes/index');
+// API Routes
 var artists = require('./routes/api/v1/artists');
-
 
   //get POST params
   app.use(bodyParser.json());

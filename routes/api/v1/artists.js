@@ -2,12 +2,16 @@ var express = require('express');
 var router = express.Router();
 var art = require('../../../models/art');
 
-// api routes
-// returns one artist
-router.get('/api/v1/art/artists/:id', function (req, res, next){
-  art.findById(req.params.id,function(err, name){
-    if (err) return res.send(err);
-    res.json(name.artist);
+
+  ///////////////
+ // api routes//
+///////////////
+
+// returns everything
+router.get('/api/v1/arts', function (req,res,next){
+  art.find(function (err,data){
+    if(err) return res.send(err);
+    res.json(data);
   });
 });
 
@@ -18,6 +22,15 @@ router.get('/api/v1/arts/artists', function (req, res, next){
     res.json(data);
   });
 });
+
+// returns one artist
+router.get('/api/v1/arts/artists/:artistId', function (req, res, next){
+  art.findById(req.params.artistId,function(err, name){
+    if (err) return res.send(err);
+    res.json(name);
+  });
+});
+
 
 // create method for testing db
 // router.post('/api/v1/arts/artists', function (req, res, next){
