@@ -13,10 +13,10 @@ router.get('/api/v1/art/artists/:id', function (req, res, next){
 
 // list all the artists
 router.get('/api/v1/arts/artists', function (req, res, next){
-  art.find({}, {"artist": 1}, function (err,data){
+  art.find().distinct('artist', function (err,data){
     if(err) return res.send(err);
     res.json(data);
-  }).limit(10);
+  });
 });
 
 // create method for testing db
