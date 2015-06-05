@@ -33,7 +33,7 @@
       .on("change", function(d){
         var value = d3.select(this).property('value');
         return d3.json('/artists/artworks/' + value, function(err, data){
-          var clicked = data
+          alert(data)
         });
       });
 
