@@ -24,8 +24,8 @@ router.get('/api/v1/arts/artists', function (req, res, next){
 });
 
 // returns one artist
-router.get('/api/v1/arts/artists/:artistId', function (req, res, next){
-  art.findById(req.params.artistId,function(err, name){
+router.get('/api/v1/arts/:artistId', function (req, res, next){
+  art.find({artistId: req.params.artistId},function(err, name){
     if (err) return res.send(err);
     res.json(name);
   });

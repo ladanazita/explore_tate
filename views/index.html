@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html ng-app="TateApp">
 <head>
   <meta charset='UTF-8'>
+  <title ng-bind="title"></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel='stylesheet' type='text/css' href='stylesheets/normalize.css'/>
   <link rel='stylesheet' type='text/css' href='stylesheets/style.css'/>
 
-  <title>Tate Explore</title>
 </head>
+
 <body>
-  <div class = "container">
-    <h1> Welcome to Explore Tate</h1>
-    <div id = "table_container">
-    </div>
-  </div>
-   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-   <script src="js/visualArt.js"></script>
+  <div ui-view></div>
+  {{1+1}}
+  <a ui-sref="home"></a>
+  <a ui-sref="artists">to artists</a>
+  <a ui-sref="artworks"></a>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/routing.js"></script>
+  <!-- <script src="js/controllers/ArtworksController.js"></script> -->
+  <script src="js/controllers/ArtistsController.js"></script>
 </body>
 </html>

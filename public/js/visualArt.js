@@ -1,61 +1,52 @@
-var w = 500;
-var h = 100;
-var padding = 2;
+// // views
+// var artistMenu = d3.select("#artists"),
+//   artworks = d3.select("#artworks");
 
-d3.json('/api/v1/arts/artists', function(err, data) {
-  var select = d3.select('body')
-    .append('div')
-    .append('select')
+// // intro
+//  // d3.select('#intro')
+//  //  .on('click', function(){
+//  //    intro.classed({'active':false});
+//  //    artistMenu.classed({'active':true});
+//  //    artworks.classed({'active':false})
+//  //  });
 
-  select
-    .on("change", function(d){
-      var value = d3.select(this).property('value');
-      alert(value);
-    });
+//   queue()
+//     .defer(d3.json, '/api/v1/arts/artists')
+//     .await(init)
 
-  select.selectAll('option')
-  .data(data)
-  .enter()
-    .append('option')
-    .attr("value", function(d){return d;})
-    .text(function(d){return d;})
-});
-// var dropDown = d3.select("#table_container").append("select").attr("name", "artists");
-// var options = dropDown.selectAll('option').data(artists).append('option');
+// function init(error, data){
+//   d3.select("#explore")
+//     .on('click',function(){
+//       intro.classed({'active':false});
+//       artistMenu.classed({'active':true});
+//       list(data);
+//     })
+//   }
+// // artistMenu
+// function list(data){
+//   d3.json('/api/v1/arts/artists', function(err, data) {
+//     var select = d3.select('body')
+//       .append('div')
+//       .append('select')
 
-// options.text(function(d){return d.value}).attr('value', function(d) {return d.value; });
+//     select
+//       .on("change", function(d){
+//         var value = d3.select(this).property('value');
+//         alert(value);
+//       });
 
-// dropDown.on("change", menuChanged);
-
-// function menuChanged(){
-//   var selectedValue = d3.event.target.value;
-//   jsonOutside.features.forEach(function(d){
-//     if (selectedValue === d.properties.name){
-//       alert(selectedValue)
-//       click(d);
-//     };
-//   })
+//     select.selectAll('option')
+//     .data(data)
+//     .enter()
+//       .append('option')
+//       .attr("value", function(d){return d;})
+//       .text(function(d){return d;})
+//   });
 // }
-// var svg =  d3.select('body')
-//             .append('svg')
-//               .attr('width', w)
-//               .attr('height', h);
 
-// svg.selectAll('rect')
-//   .data(artists)
-//   .enter()
-//   .append('rect')
-//     .attr('x', 40)
-//     .attr('y', function(d,i){
-//       return (i* (w / artists.length));
-//     })
-//     .attr('y', function(d){
-//       return h - d;
-//     })
-//     .attr('width', w / artists.length - padding)
-//     .attr('height', function(d){
-//       return (d * 4);
-//     });
+
+// artworks
+
 
 
 
