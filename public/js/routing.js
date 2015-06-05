@@ -5,11 +5,13 @@
 
     function config($stateProvider, $urlRouterProvider){
      $stateProvider
-      // .state('home',{
-      //   url: "/",
-      //   title: "Explore Tate",
-      //   templateUrl: "views/index.html"
-      // })
+      .state('home',{
+        url: "/",
+        title: "Explore Tate",
+        templateUrl: "views/index.html",
+        controller: 'ArtistsController',
+        controllerAs: 'artists'
+      })
       .state('artists',{
         url: '/artists',
         title: "Search by Artist",

@@ -9,4 +9,7 @@
 
 // })();
 
-angular.module('TateApp', ['ui.router']);
+angular
+  .module('TateApp', [
+    'ui.router'
+    ]);

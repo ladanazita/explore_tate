@@ -1,1 +1,8 @@
-<option ng-repeat="artist in artists.index | orderBy: artists.order | filter:results:strict" value="{{artist.artists}}"></option>
+<div bn-dropdown="dropdown" placeholder= "Select an artist" caret= "true" ng-change='logChange( dropdown )'>
+  <ul>
+    <li ng-repeat=" artist in artists track by artist.id" option= "artist">
+      {{artist.artist}}
+    </li>
+  </ul>
+</div>
+
