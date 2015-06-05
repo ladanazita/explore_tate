@@ -2,8 +2,9 @@ angular
   .module('TateApp')
   .directive('bnDropdown', function($compile){
     return({
+      require: ngModel,
       compile: compile,
-      priority: 2,
+      templateUrl: "artists.html",
       restrict: "A",
       terminal: true
     });

@@ -1,14 +1,14 @@
-// // views
-// var artistMenu = d3.select("#artists"),
-//   artworks = d3.select("#artworks");
+// views
+var artistMenu = d3.select("#artists"),
+  artworks = d3.select("#artworks");
 
-// // intro
-//  // d3.select('#intro')
-//  //  .on('click', function(){
-//  //    intro.classed({'active':false});
-//  //    artistMenu.classed({'active':true});
-//  //    artworks.classed({'active':false})
-//  //  });
+// intro
+ // d3.select('#intro')
+ //  .on('click', function(){
+ //    intro.classed({'active':false});
+ //    artistMenu.classed({'active':true});
+ //    artworks.classed({'active':false})
+ //  });
 
 //   queue()
 //     .defer(d3.json, '/api/v1/arts/artists')
@@ -22,10 +22,10 @@
 //       list(data);
 //     })
 //   }
-// // artistMenu
+// artistMenu
 // function list(data){
 //   d3.json('/api/v1/arts/artists', function(err, data) {
-//     var select = d3.select('body')
+//     var select = d3.select(.text)
 //       .append('div')
 //       .append('select')
 

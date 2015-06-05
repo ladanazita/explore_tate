@@ -1,8 +1,12 @@
-<div bn-dropdown="dropdown" placeholder= "Select an artist" caret= "true" ng-change='logChange( dropdown )'>
+<div bn-dropdown="dropdown" placeholder= "Select an artist" ng-change='logChange( dropdown )'>
   <ul>
-    <li ng-repeat=" artist in artists track by artist.id" option= "artist">
-      {{artist.artist}}
+    <li ng-repeat=" item in items">
+      {{item.artist}}
     </li>
   </ul>
 </div>
 
+<!-- <div ng-controller="ArtistsController" ng-init="getArtists()" ng-options="item.Id as item.Name for item in items">
+    <option ng-repeat='item in items.data' placeholder="Select Artist">{{item.artist}}</option>
+    {{1+2}}
+</div> -->

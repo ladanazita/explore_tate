@@ -22,7 +22,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     green            : #738A05; */
 
 body {
-    font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
+    font-family: "Exo 2", "Roboto", Helvetica, sans-serif;
     font-weight: 300;
     font-size: 1.2em;
     line-height: 1.2em;
@@ -52,6 +52,12 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     margin-top:20px;
     padding: 50px;
+}
+
+.text{
+    background-color: #C4BADB;
+    width: 50%;
+    height: 50%;
 }
 
 /*@media all and (max-width: 500px) {
