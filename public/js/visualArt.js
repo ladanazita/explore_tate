@@ -1,6 +1,6 @@
 // views
-var artistMenu = d3.select("#artists"),
-  artworks = d3.select("#artworks");
+// var artistMenu = d3.select("#artists"),
+//   artworks = d3.select("#artworks");
 
 // intro
  // d3.select('#intro')
@@ -24,27 +24,27 @@ var artistMenu = d3.select("#artists"),
 //   }
 // artistMenu
 // function list(data){
-//   d3.json('/api/v1/arts/artists', function(err, data) {
-//     var select = d3.select(.text)
-//       .append('div')
-//       .append('select')
+  d3.json('/api/v1/arts/artists', function(err, data) {
+    var select = d3.select("p")
+      .append('div')
+      .append('select')
 
-//     select
-//       .on("change", function(d){
-//         var value = d3.select(this).property('value');
-//         alert(value);
-//       });
+    select
+      .on("change", function(d){
+        var value = d3.select(this).property('value');
+        return d3.json('/artists/artworks/' + value, function(err, data){
+          var clicked = data
+        });
+      });
 
-//     select.selectAll('option')
-//     .data(data)
-//     .enter()
-//       .append('option')
-//       .attr("value", function(d){return d;})
-//       .text(function(d){return d;})
-//   });
+    select.selectAll('option')
+    .data(data)
+    .enter()
+      .append('option')
+      .attr("value", function(d){return d;})
+      .text(function(d){return d;})
+  });
 // }
-
-
 // artworks
 
 

@@ -14,28 +14,28 @@
 
 
 // });
-angular
-  .module('TateApp')
-  .controller('ArtistsController', ArtistsController);
+// angular
+//   .module('TateApp')
+//   .controller('ArtistsController', ArtistsController);
 
-  ArtistsController.$inject = ['$http','$scope'];
+//   ArtistsController.$inject = ['$http','$scope'];
 
-  function ArtistsController($http, $scope){
-    $scope.items = [];
-    $scope.getArtists = function(){
+//   function ArtistsController($http, $scope){
+//     $scope.items = [];
+//     $scope.getArtists = function(){
 
-      $http({
-        method: 'GET',
-        url: '/api/v1/arts/artists',
-        headers: { 'X-Parse-Application-Id':'XXX', 'X-Parse-REST-API-Key':'YYY',
-      }})
-      .success(function(data, satus){
-        $scope.items = data;
-      })
-      .error(function(data, error){
-        console.log(error);
-      });
-    }
+//       $http({
+//         method: 'GET',
+//         url: '/api/v1/arts/artists',
+//         headers: { 'X-Parse-Application-Id':'XXX', 'X-Parse-REST-API-Key':'YYY',
+//       }})
+//       .success(function(data, satus){
+//         $scope.items = data;
+//       })
+//       .error(function(data, error){
+//         console.log(error);
+//       });
+//     }
 
 
   //   var self = this;
