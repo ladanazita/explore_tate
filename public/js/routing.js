@@ -19,12 +19,12 @@
         controller: 'ArtistsController',
         controllerAs: 'artists'
       })
-      // .state('artworks',{
-      //   url: '/artists/artworks',
-      //   templateUrl: 'templates/artworks.html',
-      //   controller: 'ArtworkController',
-      //   controllerAs: 'artworks'
-      // });
+      .state('artworks',{
+        url: '/artists/artworks',
+        templateUrl: 'templates/artworks.html',
+        controller: 'ArtworkController',
+        controllerAs: 'artworks'
+      });
       $urlRouterProvider.otherwise('/');
     }
 
